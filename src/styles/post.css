@@ -1,0 +1,74 @@
+.post{
+    display: flex;
+    text-align: left;
+    margin: 0 100px;
+}
+
+.status-icon{
+    height: 42px;
+    
+}
+
+.status-container{
+    display: flex;
+    align-items: center;
+}
+
+.scammer{
+    width: 100px;
+    height: 100px;
+}
+
+
+.post-ref{
+    font-size: xx-small;
+}
+
+
+
+.poll-btn{
+    border: none;
+    cursor: pointer;
+    height: 72px;
+    width: 72px;
+    
+}
+
+.poll-btn:disabled{
+    opacity: 25%;
+}
+
+#agreeBtn{
+   
+    background: url('/public/agree.svg') no-repeat;
+    background-size: contain;
+}
+
+#disagreeBtn{
+    background: url('/public/disagree.svg') no-repeat;
+    background-size: contain;
+}
+
+.poll-score{
+    text-align: center;
+}
+
+.poll-div{
+    display: flex;
+    gap: 52px;
+}
+
+.agree-score,.disagree-score{
+    text-align: center;
+    font-weight: 500;
+}
+.agree-score{
+    color: #628B48;
+}
+
+.disagree-score{
+    color: #ED6A5A;
+}
+.post-paras{
+    margin: 12px 0;
+}

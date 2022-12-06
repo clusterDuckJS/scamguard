@@ -1,0 +1,55 @@
+.searchInputs{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#mainSearchBar{
+    width: 552px;
+    height: 42px;
+    border: 2px solid #D38CAD;
+    border-radius: 25px;
+    padding: 0 16px;
+}
+  
+input:focus{
+    border: 3px solid #D38CAD;
+}
+
+#searchBtn{
+    color: #D38CAD;
+    font-size: 2.5rem;
+}
+
+#closeBtn{
+    color: #D38CAD;
+    font-size: 2.5rem;
+    cursor: pointer;
+}
+
+.dataResult{  
+    box-shadow: #484848;
+    overflow: hidden;
+    overflow-y: auto;    
+}
+
+.seller-status-div{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.result-status-icon{
+    height: 25px;
+}
+  
+  
+.dataItem{
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-template-rows: repeat 1fr;
+    grid-column-gap: 0px;
+    grid-row-gap: 0px;
+    padding: 20px 0;
+    border-bottom: 1px solid #D38CAD;
+}

@@ -1,0 +1,52 @@
+#comment-txt{
+    width: 100vh;
+    height: 100px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #D38CAD;
+    border-radius: 4px;
+    resize: none;
+}
+
+#commentBtn{
+    width: 120px;
+    height: 36px;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+
+    color: darkslategray;
+    font-weight: 500;
+
+    background: #FDC8B3;
+    box-shadow: 0px 4px 4px rgba(237, 106, 90, 0.25);
+    border-radius: 8px;
+    border: none;
+}
+
+.comment-container{
+    display: flex;
+    margin: 32px 0;
+    width: 100vh;
+    border: 0.5px solid #D38CAD;
+    box-shadow: 0px 4px 10px rgba(255, 210, 165, 0.5);
+    border-radius: 8px;
+}
+
+.comment-dp{
+    width: 50px;
+    height: 50px;
+    border-radius: 50px;
+    padding: 22px;
+}
+
+.comment-username{
+    font-weight: 500;
+    margin: 20px 0;
+}
+
+.actual-comment{
+    padding: 0 32px 0 0;
+    
+}

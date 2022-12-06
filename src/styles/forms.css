@@ -1,0 +1,99 @@
+form{
+    display: flex;
+    justify-content: center;
+}
+.description-textarea{
+    height: 100px;
+    width: 635px;
+    padding: 12px 20px;
+    box-sizing: border-box;
+    border: 2px solid #D38CAD;
+    border-radius: 4px;
+    resize: none;
+}
+
+.text-form{
+    height: 42px;
+
+    border: 2px solid #D38CAD;
+    border-radius: 8px;
+    padding: 0 16px;
+    /* margin: 22px; */
+}
+
+.form-container-report {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-items: center;
+    width: min-content;
+    margin: 0 100px;
+}
+.form-container-report-div1 {
+    display: flex;
+    background: #FFD2A5;
+    justify-content: center;
+    width: -moz-fit-content;
+    flex-wrap: wrap;
+    width: fit-content;
+    margin: 22px;
+}
+.form-name-div{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    margin: 22px;
+}
+
+.form-name-radio{
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    margin: 22px;
+    cursor: pointer;
+}
+
+.info-text{
+    font-size: small;
+    font-weight: 400;
+    margin: 0 100px;
+}
+
+label{
+    font-size: small;
+    color: darkslategray;
+}
+
+.error-text{
+    font-size: small;
+    color: red;
+}
+
+.submit-btn{
+    background: #FDC8B3;
+    box-shadow: 0px 4px 4px rgb(237 106 90 / 25%);
+    border-radius: 8px;
+    margin: 22px 0 100px 0;
+    border: none;
+    padding: 10px 132px;
+    font-size: medium;
+    cursor: pointer;
+}
+
+.cancel-btn{
+    background: transparent;
+    cursor: pointer;
+    color: red;
+    border: none;
+    margin: 22px 0 100px 0;
+    text-decoration: underline;
+    padding: 10px 16px;
+    font-size: medium;
+}
+
+.buttons-div{
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    width: 100%;
+}

@@ -66,7 +66,7 @@ input[type=text]:focus{
 /*======== MEDIA QUERIES (SMALL DEVICES) ======== */
 @media screen and (max-width: 600px) {
     .hero-img {
-        height: 5rem;
+        height: 3.5rem;
     }
     .searchInputs {
         width: var(--container-width-sm);
@@ -80,7 +80,7 @@ input[type=text]:focus{
 /*======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
 @media screen and (max-width: 1024px) {
     .searchInputs {
-        width: var(--container-width-md);
+        width: var(--container-width-lg);
     }
     .dataItem {
         margin: 0 1rem;

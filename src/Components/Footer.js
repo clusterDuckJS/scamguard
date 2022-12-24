@@ -5,12 +5,12 @@ import '../styles/footer.css'
 function Footer() {
   return (
     <div className='footer'>
-      <h5 className='footer-para'>&copy; 2022 </h5>
+      <small className='footer-para'>&copy; 2022 </small>
       <div className='footer-github'>
         <VscGithub/>  
-        <h3>clusterDuckJS</h3>
+        <small>clusterDuckJS</small>
       </div>
-      <h5>clusterduckjs@gmail.com</h5>
+      <small>clusterduckjs@gmail.com</small>
     </div>
   )
 }

@@ -4,6 +4,7 @@ import {auth} from '../config/firebase'
 import {useAuthState} from 'react-firebase-hooks/auth'
 import { signOut } from 'firebase/auth'
 import '../styles/navbar.css'
+// import {CiLogout} from 'react-icons/ci'
 
 
 
@@ -18,18 +19,21 @@ function Navbar() {
     }
 
   return (
-    <div className='nav-bar' >
-        <img src='/logo.svg' alt='logo'></img>
-        <div className='div-links-container' >
-
-            <Link className='div-links' to={'/'} >Home</Link>
+    <div className= 'container-navbar' >
+        <Link to={'/'}>
+        <img className='logo-img' src='/images/logo.svg' alt='logo'></img>
+        </Link>
+        
+        <div className='links-container' >
             {!user ? (<Link className='div-links' to={'/login'}>Login</Link>) : (<Link className='div-links' to={'/createpost'}>Report Scam</Link>)}
             {user && (
                 <div className='user-info'>
                     <img className='profile-pic' src={user ? user.photoURL : ""} alt='profile'/>
-                    <div className='user-name' >{user ? user.displayName : ""}</div>
-                    <button className='log-btn' onClick={signUserOut} >Log Out</button>
+                    <h4 className='user-name' >{user ? user.displayName : ""}</h4>
+                     <button className='log-btn' onClick={signUserOut} >Log Out</button> 
+                    {/* <a href="#" onClick={signUserOut}> Log Out</a> */}
                 </div>
+                
             )}
         </div>
         

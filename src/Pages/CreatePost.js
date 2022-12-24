@@ -17,11 +17,11 @@ function CreatePost() {
     const schema =yup.object().shape({
         name: yup.string().required('You must add a name'),
         businessName: yup.string(),
-        mobileNum: yup.number().required('You must add a mobile number'),
-        upiNum: yup.number(),
+        mobileNum: yup.string().required('You must add a mobile number'),
+        upiNum: yup.string(),
         accNum:yup.string(),
         description: yup.string().required('You must add a description'),
-        userNum: yup.number().required('You must add your number'),
+        userNum: yup.string().required('You must add your number'),
         userEmail:yup.string(),
     });
 
@@ -46,7 +46,7 @@ function CreatePost() {
     }
 
   return (
-    <div>
+    <div className='container form-container' >
         <h2>Report Seller</h2>
         <form onSubmit={handleSubmit(onCreatePost)}>
             <div className='form-container-report'>
@@ -62,9 +62,7 @@ function CreatePost() {
                         <input className='text-form' placeholder='Name of business' id='busName' {...register('businessName')}></input>
                     </div>
                 </div>
-                
 
-                
                 <div className='form-container-report-div1'>
                     <div>
                         <div className='form-name-div'>

@@ -16,7 +16,7 @@ import Submit from './Pages/Submit';
 function App() {
 
   return (
-    <div className="App">
+    <div className="container container-app">
       <BrowserRouter>
       <Navbar />
         <Routes>

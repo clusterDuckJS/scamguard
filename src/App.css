@@ -1,47 +1,8 @@
-@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap');
-
-* {
-  /* outline: 1px solid red; */
-  font-family: "Poppins"
-}
-
-*:focus,*:hover{
-  outline:none;
-}
-
-body{
+.container-app {
   height: 100vh;
-  background: #FEFFC1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
   
-}
-
-a{
-  text-decoration: none;
-  color: darkslategray;
-}
-
-.App {
-  text-align: center;
-}
-
-h1,h2,h3,h4,p{
-  color: darkslategray;
-
-}
-
-h4{
-  font-size: 18px;
-  font-weight: 500;
-  /* margin: 0px; */
-  color: darkslategrey;
-}
-
-p{
-  margin: 0px;
-  color: darkslategray;
-}
-
-.hero-img{
-  margin-top: 100px;
-  height: 120px;
+  
 }

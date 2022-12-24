@@ -7,6 +7,7 @@ import { collection, addDoc, getDocs, query, where } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import { useParams } from 'react-router-dom';
+import {AiOutlineComment} from 'react-icons/ai'
 import '../styles/comment.css'
 
 function Comment() {
@@ -70,25 +71,25 @@ function Comment() {
         
     };
   return (
-    <div>
-        <h4>comments({commentsList?.length})</h4>
-        <form onSubmit={handleSubmit(addComment)} onChange={handleInput} >
-            <textarea id='comment-txt' value={wordEntered} placeholder='add your comment...' {...register('comment')} ></textarea>
+    <div className='comment-container'>
+        
+        <form className='comment-input-div' onSubmit={handleSubmit(addComment)} onChange={handleInput} >
+            <textarea id='comment-txt' value={wordEntered} placeholder='Add your comment...' {...register('comment')} ></textarea>
             <button id='commentBtn' type='submit'>
-                Comment
-                <img src='/comment.svg' alt='comment'></img>
+                <h5>Add Comment</h5>
+                <AiOutlineComment />
             </button>
             <p style={{color: "red"}}>{errors.comment?.message}</p>          
         </form>
-        {commentsList?.map((comment) =>(<div className='comment-container' key={comment.id} >
-            <img className='comment-dp' src={comment.userDp} alt='user'></img>
-            <div>
-                <p className='comment-username'>@{comment.username}</p>
-                <p className='actual-comment'>{comment.comment}</p>
+        <h4>Comments({commentsList?.length})</h4>
+        {commentsList?.map((comment) =>(
+            <div className='comment-item' key={comment.id} >
+                <img className='comment-dp' src={comment.userDp} alt='user'></img>
+                <div>
+                    <h4 className='comment-username'>@{comment.username}</h4>
+                    <h5 className='actual-comment'>{comment.comment}</h5>
+                </div> 
             </div>
-            
-            
-        </div>
             
         ))}
     </div>

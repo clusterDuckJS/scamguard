@@ -1,61 +1,55 @@
-.post{
+.post-container{
+    width: var(--container-width-lg);
     display: flex;
+    flex-direction: column;
+    align-items: center;
     text-align: left;
-    margin: 0 100px;
 }
-
-.status-icon{
-    height: 42px;
-    
+.post-grid-container {
+    width: 100%;
 }
 
 .status-container{
     display: flex;
+    gap: 0.5rem;
     align-items: center;
 }
-
-.scammer{
-    width: 100px;
-    height: 100px;
-}
-
 
 .post-ref{
     font-size: xx-small;
 }
-
+.pollBtn-div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
 
 
 .poll-btn{
     border: none;
     cursor: pointer;
-    height: 72px;
-    width: 72px;
-    
+    background: none;
+}
+
+.btn-icon {
+    font-size: 3rem;
+}
+
+.like-icon {
+    color: var(--color-green);
+}
+.dislike-icon {
+    color: var(--color-red);
 }
 
 .poll-btn:disabled{
     opacity: 25%;
 }
 
-#agreeBtn{
-   
-    background: url('/public/agree.svg') no-repeat;
-    background-size: contain;
-}
-
-#disagreeBtn{
-    background: url('/public/disagree.svg') no-repeat;
-    background-size: contain;
-}
-
-.poll-score{
-    text-align: center;
-}
-
 .poll-div{
     display: flex;
-    gap: 52px;
+    margin-top: 2rem;
+    gap: 3rem;
 }
 
 .agree-score,.disagree-score{
@@ -71,4 +65,20 @@
 }
 .post-paras{
     margin: 12px 0;
+}
+
+/*======== MEDIA QUERIES (MEDIUM DEVICES) ======== */
+@media screen and (max-width: 1024px) {
+    .post-container {
+        width: var(--container-width-md);
+    }
+
+
+}
+
+/*======== MEDIA QUERIES (SMALL DEVICES) ======== */
+@media screen and (max-width: 600px) {
+    .post-grid-container {
+        width: var(--container-width-sm);
+    }
 }

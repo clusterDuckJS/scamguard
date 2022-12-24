@@ -3,13 +3,14 @@ import { useParams } from 'react-router-dom'
 import {auth, db } from '../config/firebase.js';
 import { getDoc, doc, collection, query, where, getDocs, addDoc, deleteDoc } from 'firebase/firestore';
 import React, { useEffect, useState } from 'react';
-import Comment from '../Components/Comment.js';
+import Comment from '../Components/Comment.jsx';
 import { useAuthState } from 'react-firebase-hooks/auth';
 import '../styles/post.css'
-
-
-
-
+import { useNavigate } from 'react-router-dom';
+import {AiFillAlert} from 'react-icons/ai'
+import {MdVerifiedUser} from 'react-icons/md'
+import {RiUserStarLine} from 'react-icons/ri'
+import {AiOutlineDislike, AiOutlineLike} from 'react-icons/ai'
 
 
 function Post() {
@@ -17,6 +18,7 @@ function Post() {
     const {id} = useParams()
     
     const[posts, setPosts] = useState({})
+    const navigate = useNavigate()
 
     
     
@@ -100,7 +102,7 @@ function Post() {
         await deleteDoc(unlikeToDelete);
         getUnlikes();
         
-    }
+    } 
 
     const hasUserUnliked = unlikes?.find((unlike) => unlike.userId === user?.uid)
    
@@ -111,52 +113,52 @@ function Post() {
 
 
   return (
-    <div className='post'>
-        <div className='seller-info' >
+    <div className='container post-container'>
+        <h1>Seller Details</h1>
+        <div className='post-grid-container'>
+            <div className="post-grid-1">
+                <h3 className='post-paras' ><strong>Name: </strong>{posts.name}</h3>   
+                <div className='status-container'>
+                    <h4><strong>Status: </strong>{posts.status}</h4>
+                        {posts.status === 'Scammer' 
+                        ? (<AiFillAlert className='status-icon-scammer' />) 
+                        : posts.status === 'Verified Seller' 
+                        ? (<MdVerifiedUser className='status-icon-verified' />) 
+                        : (<RiUserStarLine className='status-icon-top' />)}
+                    
+                </div>
 
-            <h1>Seller Details</h1>
-            <p className='post-paras' ><strong>Name: </strong>{posts.name}</p>
-            
-            <div className='status-container'>
-                <p className='post-paras' ><strong>Status: </strong>{posts.status}</p>
-                    {posts.status === 'Scammer' 
-                    ? (<img className='status-icon' src='/scammer.svg' alt='scammer' ></img>) 
-                    : posts.status === 'Verified Seller' 
-                    ? (<img className='status-icon' src='/verified.svg' alt='verified'></img>) 
-                    : (<img className='status-icon' src='/reputed.svg' alt='reputed'></img>)}
+                    <div className='poll-div'>
+                        <div className='pollBtn-div'>
+                            <h4 className='agree-score'>Agree</h4>
+                            <button className='poll-btn' id='agreeBtn' onClick={user ? addLike : navigate('/login')} disabled={hasUserLiked}><AiOutlineLike className='btn-icon like-icon' /></button>
+                            {likes && <h4 className='agree-score'>{likes?.length}</h4>}
+                        </div>
+
+                        <div className='pollBtn-div'>
+                            <h4 className='disagree-score'>Disagree</h4>
+                            <button className='poll-btn' id='disagreeBtn' onClick={user ? addUnlike : navigate('/login')} disabled={hasUserUnliked}><AiOutlineDislike className='btn-icon dislike-icon' /></button>
+                            {unlikes && <h4 className='disagree-score'>{unlikes?.length}</h4>}
+                        </div>
+
+                    </div>
                 
+                
+
+                <h4 className='post-paras' ><strong>Other known names: </strong>{posts.otherNames}</h4>
+                <h4 className='post-paras' ><strong>Name of Business: </strong>{posts.busName}</h4>
+                <h4 className='post-paras' ><strong>Contact Info: </strong>+91 {posts.mob}</h4>
+                <h4 className='post-paras' ><strong>Location: </strong>{posts.address}</h4>
+                <h5 className='post-paras' >{posts.description}</h5>
+                <small className='post-ref'>Ref: {id}</small>
+                <Comment />
             </div>
 
-                <div className='poll-div'>
-                    <div className='pollBtn-div'>
-                        <p className='agree-score'>agree</p>
-                        <button className='poll-btn' id='agreeBtn' onClick={addLike} disabled={hasUserLiked}></button>
-                        {likes && <p className='agree-score'>{likes?.length}</p>}
-                    </div>
-
-                    <div className='pollBtn-div'>
-                        <p className='disagree-score'>disagree</p>
-                        <button className='poll-btn' id='disagreeBtn' onClick={addUnlike} disabled={hasUserUnliked}></button>
-                        {unlikes && <p className='disagree-score'>{unlikes?.length}</p>}
-                    </div>
-
-                </div>
             
             
-
-            <p className='post-paras' ><strong>Name of Business: </strong>{posts.busName}</p>
-            <p className='post-paras' ><strong>Other known names: </strong>{posts.otherNames}</p>
-            <p className='post-paras' ><strong>Contact Info: </strong>{posts.mob}</p>
-            <p className='post-paras' ><strong>Location: </strong>{posts.address}</p>
-            <p className='post-paras' >{posts.description}</p>
-            <p className='post-ref'>Ref: {id}</p>
-            <Comment />
+            
+            
         </div>
-
-        
-        
-        
-        
     </div>
   )
 }

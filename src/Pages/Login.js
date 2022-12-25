@@ -21,7 +21,7 @@ function Login() {
       <small>By signing in you will be able to see more details about the seller, 
         you can agree or disagree with the seller status and comment your experience with the seller.
       </small>
-      <button id='google-signIn' onClick={signInWithGoogle}><FcGoogle />Google Sign In</button>
+      <button className='submitBtn' onClick={signInWithGoogle}><FcGoogle />Google Sign In</button>
     </div>
   )
 }
